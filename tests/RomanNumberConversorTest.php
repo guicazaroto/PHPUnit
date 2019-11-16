@@ -19,5 +19,9 @@ class RomanNumberConversorTest extends TestCase {
     $this->assertEquals(5, $num);
   }
 
-  
+  public function testShouldUnderstandSymbolRepeated () {
+    $roman = new RomanNumberConversor();
+    $num = $roman->convert('XX');
+    $this->assertEquals(20, $num);
+  }
 }

@@ -17,9 +17,12 @@ class RomanNumberConversor {
   );
 
   public function convert ($symbol) {
-    if(array_key_exists($symbol, $this->numTable )) {
-      return $this->numTable[$symbol];
+    $ac = 0;
+    for ($i = 0; $i < strlen($symbol); $i++) {
+      if(array_key_exists($symbol[$i], $this->numTable)) {
+        $ac += $this->numTable[$symbol[$i]];
+      }
     }
-    return 0;
+    return $ac;
   }
 }
