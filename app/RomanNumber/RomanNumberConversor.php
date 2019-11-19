@@ -1,5 +1,5 @@
 <?php
-namespace App;
+namespace App\RomanNumber;
 class RomanNumberConversor {
   protected $numTable = array(
     "I" => 1,

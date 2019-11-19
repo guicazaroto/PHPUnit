@@ -1,8 +1,8 @@
 <?php
-namespace Tests;
+namespace Tests\RomanNumber;
 require './vendor/autoload.php';
 
-use App\RomanNumberConversor;
+use App\RomanNumber\RomanNumberConversor;
 use PHPUnit\Framework\TestCase;
 
 class RomanNumberConversorTest extends TestCase {
