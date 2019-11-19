@@ -1,11 +1,6 @@
 <?php
 namespace App;
 class RomanNumberConversor {
-  // public function convert ($num) {
-  //   if ($num == 'I') return 1;
-  //   if ($num == 'V') return 5;
-  // }
-  
   protected $numTable = array(
     "I" => 1,
     "V" => 5,
@@ -16,12 +11,25 @@ class RomanNumberConversor {
     "M" => 1000
   );
 
-  public function convert ($symbol) {
+  public function convert($symbol) {
     $ac = 0;
-    for ($i = 0; $i < strlen($symbol); $i++) {
-      if(array_key_exists($symbol[$i], $this->numTable)) {
-        $ac += $this->numTable[$symbol[$i]];
+    $last_right = 0;
+
+    for ( $i = strlen($symbol) - 1; $i >= 0; $i--) {
+      $current = 0;
+      $currentNumber = $symbol[$i];
+      if(array_key_exists($currentNumber, $this->numTable)) {
+        $current = $this->numTable[$currentNumber];
       }
+
+      $mult = 1;
+      if($current < $last_right) {
+        $mult = -1;
+      }
+
+      $ac += ($current * $mult);
+
+      $last_right = $current;
     }
     return $ac;
   }
