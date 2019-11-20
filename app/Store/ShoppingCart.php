@@ -1,5 +1,7 @@
 <?php
 namespace App\Store;
+
+use App\Store\Product;
 use ArrayObject;
 
 class ShoppingCart {
@@ -15,10 +17,5 @@ class ShoppingCart {
   }
   public function getProducts () {
     return $this->products;
-  }
-  public function getProductWithMajorPrice (){
-    if ($this->getProducts() === 0) {
-      return 0;
-    }
   }
 }

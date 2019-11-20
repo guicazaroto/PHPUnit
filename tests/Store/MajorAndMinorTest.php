@@ -3,6 +3,7 @@ namespace Tests\Store;
 
 use App\Store\Product;
 use App\Store\ShoppingCart;
+use App\Store\MajorAndMinor;
 use PHPUnit\Framework\TestCase;
 
 class MajorAndMinorTest extends TestCase {
