@@ -6,7 +6,7 @@ class Employee {
   protected $wage;
   protected $jobRole;
 
-  public function __construct($name, $wage, $jobRole)
+  public function __construct(string $name, float $wage, $jobRole)
   {
       $this->name = $name;
       $this->wage = $wage;
